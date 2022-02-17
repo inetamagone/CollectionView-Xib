@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var myCollectionView: UICollectionView!
     
+    var customCell: CustomCollectionViewCell!
+    
     var pictureList = [
         PictureData(sectionType: "Latest Pictures", imageGallery: ["forest", "green", "sun", "yellow"]),
         PictureData(sectionType: "Best Pictures", imageGallery: ["sun", "tree", "yellow", "forest", "green"]),
@@ -23,6 +25,7 @@ class ViewController: UIViewController {
         myCollectionView.frame = view.bounds
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
+        
     }
     
     required init?(coder: NSCoder) {
@@ -32,12 +35,19 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return pictureList.count
+      }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pictureList.count
+        pictureList[myCollectionView.tag].imageGallery.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.reuseId, for: indexPath) as? CustomCollectionViewCell else {return .init()}
+        //let indexPathRow = pictureList[indexPath.row]
+        //let collectionTag = myCollectionView.tag
+        //cell.configure()
         return cell
     }
     

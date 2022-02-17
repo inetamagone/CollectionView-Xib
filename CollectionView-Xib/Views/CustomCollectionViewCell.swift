@@ -13,16 +13,19 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var myImage: UIImageView!
     
-    var pictureList: PictureData?
+    //var pictureList: PictureData?
+    private var pictureList:[PictureData] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //myImage.image = UIImage(systemName: "sun")
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
-        contentView.backgroundColor = .blue
+        contentView.backgroundColor = .lightGray
+        
     }
     
     required init?(coder: NSCoder) {
@@ -35,4 +38,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
         contentView.frame = self.frame
     }
     
+//    func configure(pictureList: [PictureData], indexPathRow: PictureData, collectionTag: Int) {
+//        myImage.image = UIImage(named: pictureList[collectionTag].imageGallery[indexPathRow])
+//    }
+
 }

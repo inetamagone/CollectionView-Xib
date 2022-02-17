@@ -9,5 +9,5 @@ import Foundation
 
 struct PictureData {
     let sectionType: String
-    let imageGalley: [String]
+    let imageGallery: [String]
 }

@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var myCollectionView: UICollectionView!
     
-    var customCell: CustomCollectionViewCell!
+    //var itemsInSection = 0
     
     var pictureList = [
         PictureData(sectionType: "Latest Pictures", imageGallery: ["forest", "green", "sun", "yellow"]),
@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         myCollectionView.frame = view.bounds
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
-        
     }
     
     required init?(coder: NSCoder) {
@@ -36,19 +35,23 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return pictureList.count
+        pictureList.count
       }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pictureList[myCollectionView.tag].imageGallery.count
+        return 3
+        //return self.itemsInSection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.reuseId, for: indexPath) as? CustomCollectionViewCell else {return .init()}
-        //let indexPathRow = pictureList[indexPath.row]
-        //let collectionTag = myCollectionView.tag
-        //cell.configure()
+        
+        //let sectionPictures = pictureList[indexPath.item].imageGallery[indexPath.row].count
+        //self.itemsInSection = sectionPictures
+        let imagePathRow = pictureList[indexPath.item].imageGallery[indexPath.row]
+        cell.configure(imagePathRow: imagePathRow)
+        
+        cell.backgroundColor = .red
         return cell
     }
-    
 }

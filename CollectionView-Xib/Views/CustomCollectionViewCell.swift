@@ -11,14 +11,11 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     static var reuseId: String = "customCell"
     
+    //@IBOutlet weak var commonView: UIView!
     @IBOutlet var myImage: UIImageView!
-    
-    var pictureList: PictureData?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        //myImage.image = UIImage(named: "sun")
     }
     
     override init(frame: CGRect) {
@@ -26,19 +23,20 @@ class CustomCollectionViewCell: UICollectionViewCell {
         initView()
         contentView.backgroundColor = .lightGray
     }
-    
+
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     func initView() {
         Bundle.main.loadNibNamed("CustomCollectionViewCell", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.frame
     }
-    
+
     func configure(imagePathRow: String) {
-        self.myImage.image = UIImage(named: imagePathRow)
+        self.myImage?.image = UIImage(named: imagePathRow)
     }
     
 }

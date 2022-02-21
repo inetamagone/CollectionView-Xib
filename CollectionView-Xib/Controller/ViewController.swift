@@ -11,30 +11,30 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var myCollectionView: UICollectionView!
     
-    var pictureList = [
-        PictureData(sectionType: "Latest Pictures", imageGalley: ["forest", "green", "sun", "yellow"]),
-        PictureData(sectionType: "Best Pictures", imageGalley: ["sun", "tree", "yellow", "forest", "green"]),
-        PictureData(sectionType: "Popular Pictures", imageGalley: ["green", "yellow", "forest", "sun", "tree"])
-    ]
-    
+    var pictureList = ["forest", "green", "sun", "yellow", "tree", "red"]
+           
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+        
+        myCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.reuseId)
+        myCollectionView.dataSource = self
+        }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pictureList.count
+        return pictureList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as? CustomCollectionViewCell else {return .init()}
+        guard let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.reuseId, for: indexPath) as? CustomCollectionViewCell else {return .init()}
+        let imagePathRow = pictureList[indexPath.row]
+        cell.configure(imagePathRow: imagePathRow)
         return cell
     }
-    
 }

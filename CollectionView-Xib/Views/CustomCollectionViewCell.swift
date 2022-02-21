@@ -9,12 +9,28 @@ import UIKit
 
 class CustomCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet var myImage: UIImageView!
+    static var reuseId: String = "customCell"
     
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var commonView: UIView!
+    @IBOutlet weak var myImage: UIImageView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initView()
     }
 
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
+    func initView() {
+        Bundle.main.loadNibNamed("CustomCollectionViewCell", owner: self, options: nil)
+        addSubview(commonView)
+        commonView.frame = self.frame
+    }
+
+    func configure(imagePathRow: String) {
+        self.myImage?.image = UIImage(named: imagePathRow)
+    }
+    
 }

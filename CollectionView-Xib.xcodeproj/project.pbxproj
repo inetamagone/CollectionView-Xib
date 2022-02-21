@@ -12,7 +12,6 @@
 		FCE8217F27BE59E700FD17D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE8217D27BE59E700FD17D7 /* Main.storyboard */; };
 		FCE8218127BE59E900FD17D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE8218027BE59E900FD17D7 /* Assets.xcassets */; };
 		FCE8218427BE59E900FD17D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE8218227BE59E900FD17D7 /* LaunchScreen.storyboard */; };
-		FCE8219427BE607400FD17D7 /* PictureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE8219327BE607400FD17D7 /* PictureData.swift */; };
 		FCE8219727BE6B7900FD17D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE8219627BE6B7900FD17D7 /* ViewController.swift */; };
 		FCE8219A27BE6CC300FD17D7 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE8219827BE6CC300FD17D7 /* CustomCollectionViewCell.swift */; };
 		FCE8219B27BE6CC300FD17D7 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCE8219927BE6CC300FD17D7 /* CustomCollectionViewCell.xib */; };
@@ -26,7 +25,6 @@
 		FCE8218027BE59E900FD17D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCE8218327BE59E900FD17D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCE8218527BE59E900FD17D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCE8219327BE607400FD17D7 /* PictureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureData.swift; sourceTree = "<group>"; };
 		FCE8219627BE6B7900FD17D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCE8219827BE6CC300FD17D7 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		FCE8219927BE6CC300FD17D7 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -64,7 +62,6 @@
 			children = (
 				FCE8217727BE59E700FD17D7 /* AppDelegate.swift */,
 				FCE8217927BE59E700FD17D7 /* SceneDelegate.swift */,
-				FCE8219527BE607800FD17D7 /* Model */,
 				FCE8219027BE5AE000FD17D7 /* Controller */,
 				FCE8218F27BE5ABC00FD17D7 /* Views */,
 				FCE8218027BE59E900FD17D7 /* Assets.xcassets */,
@@ -90,14 +87,6 @@
 				FCE8219627BE6B7900FD17D7 /* ViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		FCE8219527BE607800FD17D7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FCE8219327BE607400FD17D7 /* PictureData.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +164,6 @@
 				FCE8219727BE6B7900FD17D7 /* ViewController.swift in Sources */,
 				FCE8219A27BE6CC300FD17D7 /* CustomCollectionViewCell.swift in Sources */,
 				FCE8217827BE59E700FD17D7 /* AppDelegate.swift in Sources */,
-				FCE8219427BE607400FD17D7 /* PictureData.swift in Sources */,
 				FCE8217A27BE59E700FD17D7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

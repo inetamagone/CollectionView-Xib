@@ -11,7 +11,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     static var reuseId: String = "customCell"
     
-    //@IBOutlet weak var commonView: UIView!
+    @IBOutlet weak var commonView: UIView!
     @IBOutlet var myImage: UIImageView!
     
     override func awakeFromNib() {
@@ -21,7 +21,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
-        contentView.backgroundColor = .lightGray
+        commonView.backgroundColor = .lightGray
     }
 
 
@@ -31,7 +31,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
 
     func initView() {
         Bundle.main.loadNibNamed("CustomCollectionViewCell", owner: self, options: nil)
-        addSubview(contentView)
+        addSubview(commonView)
         contentView.frame = self.frame
     }
 

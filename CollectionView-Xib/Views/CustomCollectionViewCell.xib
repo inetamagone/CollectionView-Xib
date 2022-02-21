@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomCollectionViewCell" customModule="CollectionView_Xib" customModuleProvider="target">
             <connections>
+                <outlet property="commonView" destination="3U4-EE-pr8" id="Rw0-hj-8QK"/>
                 <outlet property="myImage" destination="u5q-hK-hoi" id="IfR-6n-e4K"/>
             </connections>
         </placeholder>
@@ -21,10 +22,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3U4-EE-pr8">
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3U4-EE-pr8">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u5q-hK-hoi">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u5q-hK-hoi">
                                 <rect key="frame" x="25" y="25" width="150" height="150"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
@@ -34,24 +36,13 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="u5q-hK-hoi" firstAttribute="top" secondItem="3U4-EE-pr8" secondAttribute="top" constant="25" id="1zh-sQ-wLF"/>
-                            <constraint firstAttribute="bottom" secondItem="u5q-hK-hoi" secondAttribute="bottom" constant="25" id="Gyf-Fn-vR3"/>
-                            <constraint firstItem="u5q-hK-hoi" firstAttribute="leading" secondItem="3U4-EE-pr8" secondAttribute="leading" constant="25" id="evp-35-xBq"/>
-                            <constraint firstAttribute="trailing" secondItem="u5q-hK-hoi" secondAttribute="trailing" constant="25" id="mYM-g4-9iI"/>
-                        </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="3U4-EE-pr8" secondAttribute="trailing" id="E4y-wN-9PJ"/>
-                <constraint firstItem="3U4-EE-pr8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HSX-ft-6sW"/>
-                <constraint firstItem="3U4-EE-pr8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Zwp-pB-8xB"/>
-                <constraint firstAttribute="bottom" secondItem="3U4-EE-pr8" secondAttribute="bottom" id="mXP-Pt-jqX"/>
-            </constraints>
             <size key="customSize" width="59" height="61"/>
             <connections>
+                <outlet property="commonView" destination="3U4-EE-pr8" id="IiF-lz-abe"/>
                 <outlet property="myImage" destination="u5q-hK-hoi" id="iEw-tv-YWm"/>
             </connections>
             <point key="canvasLocation" x="-46" y="-140"/>

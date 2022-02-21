@@ -15,8 +15,8 @@ class ViewController: UIViewController {
            
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nibCell = UINib(nibName: "CustomCollectionViewCell", bundle: nil)
-        myCollectionView.register(nibCell, forCellWithReuseIdentifier: CustomCollectionViewCell.reuseId)
+        
+        myCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.reuseId)
         
         myCollectionView.delegate = self
         myCollectionView.dataSource = self

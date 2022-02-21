@@ -25,12 +25,12 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3U4-EE-pr8">
                         <rect key="frame" x="0.0" y="0.0" width="256" height="170"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u5q-hK-hoi">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u5q-hK-hoi">
                                 <rect key="frame" x="0.0" y="0.0" width="256" height="170"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="dn0-np-Z4k"/>
-                                    <constraint firstAttribute="width" constant="256" id="jid-oC-uSE"/>
+                                    <constraint firstAttribute="width" constant="256" id="SZL-cN-47W"/>
+                                    <constraint firstAttribute="height" constant="170" id="aVF-uP-OJX"/>
                                 </constraints>
                             </imageView>
                         </subviews>

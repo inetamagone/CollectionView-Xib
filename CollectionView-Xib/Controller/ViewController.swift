@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         myCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.reuseId)
-        myCollectionView.delegate = self
         myCollectionView.dataSource = self
         }
     
@@ -26,7 +25,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pictureList.count
@@ -34,10 +33,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.reuseId, for: indexPath) as? CustomCollectionViewCell else {return .init()}
-        //cell.myImage?.image = UIImage(named: pictureList[indexPath.row])
         let imagePathRow = pictureList[indexPath.row]
         cell.configure(imagePathRow: imagePathRow)
-        cell.backgroundColor = .red
         return cell
     }
 }

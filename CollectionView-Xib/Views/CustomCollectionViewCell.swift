@@ -12,18 +12,12 @@ class CustomCollectionViewCell: UICollectionViewCell {
     static var reuseId: String = "customCell"
     
     @IBOutlet weak var commonView: UIView!
-    @IBOutlet var myImage: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    @IBOutlet weak var myImage: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
-        commonView.backgroundColor = .lightGray
     }
-
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)

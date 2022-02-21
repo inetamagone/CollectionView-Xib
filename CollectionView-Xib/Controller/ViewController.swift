@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         myCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.reuseId)
-        
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
         }

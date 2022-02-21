@@ -32,7 +32,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     func initView() {
         Bundle.main.loadNibNamed("CustomCollectionViewCell", owner: self, options: nil)
         addSubview(commonView)
-        contentView.frame = self.frame
+        commonView.frame = self.frame
     }
 
     func configure(imagePathRow: String) {

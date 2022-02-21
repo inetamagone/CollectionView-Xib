@@ -28,9 +28,9 @@ class CustomCollectionViewCell: UICollectionViewCell {
         addSubview(commonView)
         commonView.frame = self.frame
     }
-
-    func configure(imagePathRow: String) {
-        self.myImage?.image = UIImage(named: imagePathRow)
-    }
     
+    func setGallery(galleryPath: String) {
+        myImage?.image = UIImage(named: galleryPath)
+    }
 }
+

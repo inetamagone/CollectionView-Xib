@@ -32,8 +32,5 @@ class CustomCollectionViewCell: UICollectionViewCell {
     func setGallery(galleryPath: String) {
         myImage?.image = UIImage(named: galleryPath)
     }
-//    func configure(arrayOfPictures: [String]) {
-//        myImage?.image = UIImage(named: arrayOfPictures)
-//    }
 }
 

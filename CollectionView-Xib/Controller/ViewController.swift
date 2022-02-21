@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     
     var pictureList = [
              PictureData(sectionType: "Latest Pictures", imageGallery: ["forest", "green", "sun", "yellow"]),
-             PictureData(sectionType: "Best Pictures", imageGallery: ["sun", "tree", "yellow", "forest", "green"]),
-             PictureData(sectionType: "Popular Pictures", imageGallery: ["green", "yellow", "forest", "sun", "tree"])
+//             PictureData(sectionType: "Best Pictures", imageGallery: ["sun", "tree", "yellow", "forest", "green"]),
+//             PictureData(sectionType: "Popular Pictures", imageGallery: ["green", "yellow", "forest", "sun", "tree"])
          ]
            
     override func viewDidLoad() {
@@ -22,6 +22,12 @@ class ViewController: UIViewController {
         
         myCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.reuseId)
         myCollectionView.dataSource = self
+        
+        myCollectionView.allowsMultipleSelection = true
+        
+        let height = CGFloat(180 * pictureList.count)
+        setViewConstraints(height: height)
+        
         }
     
     required init?(coder: NSCoder) {
@@ -38,11 +44,6 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("Pictures in each section: ", pictureList[section].imageGallery.count)
-        
-        let width = CGFloat(256 * pictureList[section].imageGallery.count)
-        let height = CGFloat(180 * pictureList.count)
-        setViewConstraints(width: width, height: height)
-        
         return pictureList[section].imageGallery.count
     }
     
@@ -54,10 +55,9 @@ extension ViewController: UICollectionViewDataSource {
         return cell
     }
     
-    func setViewConstraints(width: CGFloat, height: CGFloat){
+    func setViewConstraints(height: CGFloat){
         myCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            //myCollectionView.widthAnchor.constraint(equalToConstant: width),
             myCollectionView.heightAnchor.constraint(equalToConstant: height),
             myCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             myCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),

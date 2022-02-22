@@ -34,3 +34,10 @@ class CustomCollectionViewCell: UICollectionViewCell {
     }
 }
 
+//extension HeaderCollectionReusableView: UICollectionViewDelegate {
+//    
+//    func setTitle(viewName: UICollectionView, scrollName: PictureData, textName: String) {
+//        self.firstTitleLabel?.text = textName
+//    }
+//}
+

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC4C48EA27C4EA2A00559E90 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C48E927C4EA2A00559E90 /* HeaderCollectionReusableView.swift */; };
 		FCBA547827C3777E00D4B88D /* PictureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBA547727C3777E00D4B88D /* PictureData.swift */; };
 		FCE8217827BE59E700FD17D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE8217727BE59E700FD17D7 /* AppDelegate.swift */; };
 		FCE8217A27BE59E700FD17D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE8217927BE59E700FD17D7 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC4C48E927C4EA2A00559E90 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		FCBA547727C3777E00D4B88D /* PictureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureData.swift; sourceTree = "<group>"; };
 		FCE8217427BE59E700FD17D7 /* CollectionView-Xib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CollectionView-Xib.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE8217727BE59E700FD17D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				FCE8219827BE6CC300FD17D7 /* CustomCollectionViewCell.swift */,
 				FCE8219927BE6CC300FD17D7 /* CustomCollectionViewCell.xib */,
+				FC4C48E927C4EA2A00559E90 /* HeaderCollectionReusableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				FCBA547827C3777E00D4B88D /* PictureData.swift in Sources */,
 				FCE8219A27BE6CC300FD17D7 /* CustomCollectionViewCell.swift in Sources */,
 				FCE8217827BE59E700FD17D7 /* AppDelegate.swift in Sources */,
+				FC4C48EA27C4EA2A00559E90 /* HeaderCollectionReusableView.swift in Sources */,
 				FCE8217A27BE59E700FD17D7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

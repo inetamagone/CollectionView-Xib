@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var myCollectionView: UICollectionView!
     
     let pictureList: [PictureData] = [
-        PictureData(sectionType: "Latest Pictures", imageGallery: ["forest", "green", "sun", "yellow"])
+        PictureData(sectionType: "Latest Pictures", imageGallery: ["forest", "green", "sun", "yellow", "tree", "red"])
     ]
 
     override func viewDidLoad() {

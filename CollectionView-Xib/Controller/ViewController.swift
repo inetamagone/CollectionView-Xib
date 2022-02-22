@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         setupCollectionViews(viewName: secondCollectionView)
         setupCollectionViews(viewName: thirdCollectionView)
         
-        firstCollectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.reuseId)
+        firstCollectionView.register(UINib.init(nibName: "HeaderCollectionReusableView", bundle: nil), forCellWithReuseIdentifier: HeaderCollectionReusableView.reuseId)
     }
     
     required init?(coder: NSCoder) {
@@ -92,31 +92,14 @@ extension ViewController: UICollectionViewDataSource {
         headerView.setTitle(viewName: firstCollectionView, scrollName: firstScroll, textName: textName)
         return headerView
     }
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
     
-//    func collectionView(_ collectionView: UICollectionView, indexPathForIndexTitle title: String, at index: Int) -> IndexPath {
-//
-//        guard let index = arrayOfTitles.firstIndex(where: { $0.prefix(1) == title }) else {
-//            return IndexPath(item: 0, section: 0)
-//        }
-//        return IndexPath(item: index, section: 0)
-//    }
-    
-    // Puts a title in the middle of cell
-    
-//    func indexTitles(for collectionView: UICollectionView) -> [String]? {
-//        var titleArray = [String]()
-//        if collectionView == firstCollectionView {
-//            titleArray.append(firstScroll.sectionType)
-//        }
-//        if collectionView == secondCollectionView {
-//            titleArray.append(secondScroll.sectionType)
-//        }
-//        if collectionView == thirdCollectionView {
-//            titleArray.append(thirdScroll.sectionType)
-//        }
-//        print(titleArray[0])
-//        arrayOfTitles = titleArray
-//        return titleArray
-//    }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if collectionView == firstCollectionView {
+            return CGSize.init(width: 50, height: 100)
+        }
+        return .zero
+    }
 }

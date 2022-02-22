@@ -13,13 +13,14 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var firstTitleLabel: UILabel!
     
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder)
-//    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .blue
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     func setTitle(viewName: UICollectionView, scrollName: PictureData, textName: String) {
         firstTitleLabel?.text = textName

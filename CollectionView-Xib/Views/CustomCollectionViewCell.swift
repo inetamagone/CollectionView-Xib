@@ -29,8 +29,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
         commonView.frame = self.frame
     }
     
-    func setGallery(galleryPath: String) {
-        myImage?.image = UIImage(named: galleryPath)
+    func setGallery(viewName: UICollectionView, scrollName: PictureData, pictureName: String) {
+        myImage?.image = UIImage(named: pictureName)
     }
 }
 

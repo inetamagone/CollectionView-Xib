@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct PictureData {
-     let sectionType: String
-     let imageGallery: [String]
- }
+class PictureData {
+    let sectionType: String
+    let imageGallery: [String]
+    
+    init(sectionType: String, imageGallery: [String]) {
+        self.sectionType = sectionType
+        self.imageGallery = imageGallery
+    }
+}
+

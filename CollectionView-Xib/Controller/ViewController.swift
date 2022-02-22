@@ -9,26 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var myCollectionView: UICollectionView!
+    @IBOutlet weak var firstCollectionView: UICollectionView!
+    @IBOutlet weak var secondCollectionView: UICollectionView!
+    @IBOutlet weak var thirdCollectionView: UICollectionView!
     
-    var pictureList = [
-             PictureData(sectionType: "Latest Pictures", imageGallery: ["forest", "green", "sun", "yellow"]),
-//             PictureData(sectionType: "Best Pictures", imageGallery: ["sun", "tree", "yellow", "forest", "green"]),
-//             PictureData(sectionType: "Popular Pictures", imageGallery: ["green", "yellow", "forest", "sun", "tree"])
-         ]
-           
+    let firstScroll = PictureData(sectionType: "Latest Pictures", imageGallery: ["forest", "green", "sun", "yellow"])
+    let secondScroll = PictureData(sectionType: "Best Pictures", imageGallery: ["sun", "tree", "yellow", "forest", "green"])
+    let thirdScroll = PictureData(sectionType: "Popular Pictures", imageGallery: ["green", "yellow", "forest", "sun", "tree"])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.reuseId)
-        myCollectionView.dataSource = self
+        firstCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.reuseId)
+        firstCollectionView.dataSource = self
         
-        myCollectionView.allowsMultipleSelection = true
+        secondCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.reuseId)
+        secondCollectionView.dataSource = self
         
-        let height = CGFloat(180 * pictureList.count)
-        setViewConstraints(height: height)
-        
-        }
+        thirdCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.reuseId)
+        thirdCollectionView.dataSource = self
+    }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -38,31 +38,47 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("Number of sections: ", pictureList.count)
-        return pictureList.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("Pictures in each section: ", pictureList[section].imageGallery.count)
-        return pictureList[section].imageGallery.count
+        var countOfItems = 0
+        if collectionView == firstCollectionView {
+            countOfItems = firstScroll.imageGallery.count
+        }
+        else if collectionView == secondCollectionView {
+            countOfItems = secondScroll.imageGallery.count
+        }
+        else if collectionView == thirdCollectionView {
+            countOfItems = thirdScroll.imageGallery.count
+        }
+        return countOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.reuseId, for: indexPath) as? CustomCollectionViewCell else {return .init()}
-        let pictureListPath = pictureList[indexPath.section]
-        let galleryPath = pictureListPath.imageGallery[indexPath.item]
-        cell.setGallery(galleryPath: galleryPath)
-        return cell
+        guard let cellOne = firstCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.reuseId, for: indexPath) as? CustomCollectionViewCell else {return .init()}
+        guard let cellTwo = secondCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.reuseId, for: indexPath) as? CustomCollectionViewCell else {return .init()}
+        guard let cellThree = thirdCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.reuseId, for: indexPath) as? CustomCollectionViewCell else {return .init()}
+        
+        var cellName = CustomCollectionViewCell()
+        
+        if collectionView == firstCollectionView {
+            let pictureName = firstScroll.imageGallery[indexPath.row]
+            cellOne.setGallery(viewName: firstCollectionView, scrollName: firstScroll, pictureName: pictureName)
+            cellName = cellOne
+        }
+        
+        if collectionView == secondCollectionView {
+            let pictureName = secondScroll.imageGallery[indexPath.row]
+            cellTwo.setGallery(viewName: secondCollectionView, scrollName: secondScroll, pictureName: pictureName)
+            cellName = cellTwo
+        }
+        
+        if collectionView == thirdCollectionView {
+            let pictureName = thirdScroll.imageGallery[indexPath.row]
+            cellThree.setGallery(viewName: thirdCollectionView, scrollName: thirdScroll, pictureName: pictureName)
+            cellName = cellThree
+        }
+        return cellName
     }
-    
-    func setViewConstraints(height: CGFloat){
-        myCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            myCollectionView.heightAnchor.constraint(equalToConstant: height),
-            myCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
-            myCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            myCollectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-    }
-    
 }

@@ -22,7 +22,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         super.init(coder: coder)
     }
     
-    func setTitle(viewName: UICollectionView, scrollName: PictureData, textName: String) {
+    func setTitle(textName: String) {
         firstTitleLabel?.text = textName
     }
     

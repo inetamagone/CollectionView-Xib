@@ -29,15 +29,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
         commonView.frame = self.frame
     }
     
-    func setGallery(viewName: UICollectionView, scrollName: PictureData, pictureName: String) {
-        myImage?.image = UIImage(named: pictureName)
+    func setGallery(galleryPath: String) {
+        myImage?.image = UIImage(named: galleryPath)
     }
 }
-
-//extension HeaderCollectionReusableView: UICollectionViewDelegate {
-//    
-//    func setTitle(viewName: UICollectionView, scrollName: PictureData, textName: String) {
-//        self.firstTitleLabel?.text = textName
-//    }
-//}
 

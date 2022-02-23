@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
-    
+
     let pictureList: [PictureData] = [
         PictureData(sectionType: "Latest Pictures", imageGallery: ["forest", "green", "sun", "yellow", "tree", "red"])
     ]
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pictureList.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -43,8 +43,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 //        cell.setGallery(galleryPath: galleryPath)
         //cell.initView()
         //cell.myCollectionView?.tag = indexPath.section
+        //let myCollectionView = cell.myCollectionView
+        //cell.displayCollectionView(myCollectionView: myCollectionView)
         cell.configure(pictureList: pictureList)
-        //cell.addMyViewToController()
         cell.backgroundColor = .yellow
         return cell
     }

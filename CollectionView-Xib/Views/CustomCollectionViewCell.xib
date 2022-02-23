@@ -10,8 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomCollectionViewCell" customModule="CollectionView_Xib" customModuleProvider="target">
             <connections>
-                <outlet property="commonView" destination="3U4-EE-pr8" id="Rw0-hj-8QK"/>
-                <outlet property="myCollectionView" destination="43E-AA-YPi" id="QhG-lS-CTB"/>
+                <outlet property="myCollectionView" destination="43E-AA-YPi" id="P8J-Zx-EiK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -35,6 +34,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <connections>
+                                    <outlet property="dataSource" destination="-1" id="BA9-qR-5bi"/>
+                                    <outlet property="delegate" destination="-1" id="vDg-qU-eUd"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MA5-eK-aUn"/>
@@ -57,8 +60,7 @@
             </constraints>
             <size key="customSize" width="59" height="61"/>
             <connections>
-                <outlet property="commonView" destination="3U4-EE-pr8" id="IiF-lz-abe"/>
-                <outlet property="myCollectionView" destination="43E-AA-YPi" id="cgd-dg-dFJ"/>
+                <outlet property="myCollectionView" destination="43E-AA-YPi" id="e3V-N4-eil"/>
             </connections>
             <point key="canvasLocation" x="-46" y="-140"/>
         </collectionViewCell>

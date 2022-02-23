@@ -32,15 +32,19 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return pictureList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.reuseId, for: indexPath) as? CustomCollectionViewCell else {return .init()}
         // Set pictures to gallery
-        let pictureListPath = pictureList[indexPath.section]
-        let galleryPath = pictureListPath.imageGallery[indexPath.row]
-        cell.setGallery(galleryPath: galleryPath)
+//        let pictureListPath = pictureList[indexPath.section]
+//        let galleryPath = pictureListPath.imageGallery[indexPath.row]
+//        cell.setGallery(galleryPath: galleryPath)
+        //cell.initView()
+        //cell.myCollectionView?.tag = indexPath.section
+        cell.configure(pictureList: pictureList)
+        //cell.addMyViewToController()
         cell.backgroundColor = .yellow
         return cell
     }

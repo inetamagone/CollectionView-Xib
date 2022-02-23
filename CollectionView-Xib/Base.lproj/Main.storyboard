@@ -66,6 +66,10 @@
                                         <outlet property="firstTitleLabel" destination="7VX-aY-v7P" id="3GL-A4-KkI"/>
                                     </connections>
                                 </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ngr-Ec-v0f" id="sHg-Pc-MbO"/>
+                                    <outlet property="delegate" destination="Ngr-Ec-v0f" id="gU8-2k-jIp"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w22-bb-qnx"/>
@@ -79,7 +83,6 @@
                     </view>
                     <connections>
                         <outlet property="mainCollectionView" destination="BHK-wD-ewM" id="JOs-uX-k8f"/>
-                        <outlet property="myCollectionView" destination="BHK-wD-ewM" id="p6R-fx-0hg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DbP-3P-mO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var myCollectionView: UICollectionView!
+    @IBOutlet weak var mainCollectionView: UICollectionView!
     
     let pictureList: [PictureData] = [
         PictureData(sectionType: "Latest Pictures", imageGallery: ["forest", "green", "sun", "yellow", "tree", "red"])
@@ -17,10 +17,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        myCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.reuseId)
-        myCollectionView.dataSource = self
-        
-        myCollectionView.register(UINib.init(nibName: "HeaderCollectionReusableView", bundle: nil), forCellWithReuseIdentifier: HeaderCollectionReusableView.reuseId)
+        mainCollectionView.dataSource = self
+        mainCollectionView.delegate = self
+        //mainCollectionView.register(UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CustomCollectionViewCell.reuseId)
+        mainCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.reuseId)
+        mainCollectionView.register(UINib.init(nibName: "HeaderCollectionReusableView", bundle: nil), forCellWithReuseIdentifier: HeaderCollectionReusableView.reuseId)
     }
     
     required init?(coder: NSCoder) {
@@ -28,25 +29,23 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pictureList[section].imageGallery.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.reuseId, for: indexPath) as? CustomCollectionViewCell else {return .init()}
+        guard let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.reuseId, for: indexPath) as? CustomCollectionViewCell else {return .init()}
         // Set pictures to gallery
         let pictureListPath = pictureList[indexPath.section]
         let galleryPath = pictureListPath.imageGallery[indexPath.row]
         cell.setGallery(galleryPath: galleryPath)
+        cell.backgroundColor = .yellow
         return cell
     }
     
-     // The header
+    // The header
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.reuseId, for: indexPath) as? HeaderCollectionReusableView else {return .init()}
         let textName = pictureList[indexPath.row].sectionType

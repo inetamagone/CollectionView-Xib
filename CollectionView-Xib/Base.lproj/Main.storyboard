@@ -78,6 +78,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mainCollectionView" destination="BHK-wD-ewM" id="JOs-uX-k8f"/>
                         <outlet property="myCollectionView" destination="BHK-wD-ewM" id="p6R-fx-0hg"/>
                     </connections>
                 </viewController>
